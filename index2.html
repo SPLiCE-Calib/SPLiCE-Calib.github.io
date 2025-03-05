@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+
+
+  <title>SLIC-Calib</title>
+  <style>
+    *{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    }
+  </style>
+   <style>
+        .nav-pills {
+            display: flex; /* 가로로 나열 */
+            justify-content: center; /* 가로 가운데 정렬 */
+            list-style: none; /* 기본 리스트 스타일 제거 */
+            padding: 0; /* 리스트의 기본 패딩 제거 */
+            margin: 0; /* 리스트의 기본 여백 제거 */
+        }
+
+        .nav-pills li {
+            margin: 60px; /* 리스트 항목 간 간격 */
+            text-align: center; /* 텍스트 가운데 정렬 */
+        }
+
+        .nav-pills img {
+            display: block; /* 이미지를 블록 요소로 설정 */
+            margin: 0 auto; /* 이미지를 가운데 정렬 */
+            height: 80px; /* 이미지 크기 조정 */
+        }
+
+        .nav-pills h4 {
+            margin-top: 10px; /* 제목과 이미지 사이 간격 */
+            font-size: 1.2em; /* 텍스트 크기 조정 */
+            color: #000; /* 텍스트 색상 */
+        }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <div style="text-align: center;">  
+      <h1>
+        <span style="font-weight: 900;">SLIC-Calib</span>: Single-Point LiDAR and Camera Calibration Leveraging Manhattan World
+      </h1>
+
+      <div style="margin-top: 15px;">
+        <span style="margin-right: 15px; font-size: 1.3em;">Anonymous authors<sup>1</sup></a></span>
+    
+      </div>
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="row" style="display: flex; justify-content: center;">
+            <ul class="nav-pills">
+                <li>
+                    <a href="">
+                        <img src="img/paper_imag.png" height="40px">
+                        <h4><strong>Paper</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/youtube_icon.png" height="40px">
+                        <h4><strong>Video</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/github.png" height="40px">
+                        <h4><strong>Code</strong></h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div style="margin-top: 30px;">
+      <h2 class="text-center">
+        Abstract
+      </h2>
+      
+  <div style="margin-top: 60px; width: 90%; margin: 0 auto; text-align: justify;">
+    <p style="margin-bottom: 20px;">
+    We propose a novel calibration method between single-point LiDAR and camera sensors utilizing an easy-to-build customized calibration board satisfying the Manhattan world (MW).
+    Previous approaches for LiDAR-camera (LC) calibration focus on line and plane correspondences.
+    However, they require dense point clouds from heavy LiDAR to simplify alignment; otherwise, these approaches fail for extremely sparse LiDAR.
+    The compact size and lightweight single-point LiDARs make them ideal for micro-robotics where size and weight are constrained.
+    To address these gaps, we present a new extrinsic calibration method with a new calibration board, which rotates like a door to capture geometric features and align them with images.
+    Once we find an initial estimate, we refine the relative rotation by minimizing the angle difference between the grid orientation of the checkerboard and the MW axes.
+    We demonstrate the effectiveness of the proposed method through various LC configurations, achieving its capability and high accuracy compared to other state-of-the-art approaches.
+    We release our calibration toolkit, source codes, and how to make the calibration target boards at: <a href="https://slic-calib.github.io/" target="_blank">SLIC-Calib Project Page</a>.
+  </p>
+
+
+      
+<div style="margin-top: 50px; text-align: center;">
+  <div class="text-center">
+    <h2>Target Board</h2>
+    <div style="width: 90%; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 20px;">
+      <!-- GIF -->
+      <div style="flex: 1; max-width: 45%; text-align: center;">
+        <img src="gif/board.gif" alt="GIF" style="width: 100%; height: auto; border-radius: 0px;">
+      </div>
+      <!-- 이미지 -->
+      <div style="flex: 1; max-width: 45%; text-align: center;">
+        <img src="gif/mw.png" alt="Image" style="width: 100%; height: auto; border-radius: 0px;">
+      </div>
+            <div style="flex: 1; max-width: 45%; text-align: center;">
+        <img src="gif/targetboard.png" alt="Image" style="width: 100%; height: auto; border-radius: 0px;">
+      </div>
+    </div>
+  <div style="margin-top: 60px; width: 100%; margin: 0 auto; text-align: justify;">
+    <p style="margin-bottom: 20px;">
+        Custom-built calibration target board to extract point and line features: <b>(1)</b> Completely flat that satisfies the Manhattan world.
+        <b>(2)</b> Multiple black-and-white grids row extend 300 mm horizontally, with a square hole at the lower center of the grid.
+        <b>(3)</b> Rotates 90 degrees like a door. <b>(4)</b> Each frame has a unique Manhattan Frame. 
+    
+      </p>
+    </div>
+  </div>
+</div>
+
+  
+  <div style="margin-top: 50px; text-align: center;">
+  <div class="text-center">
+    <h2>Calibration Method</h2>
+    <img src="gif/method.gif" alt="Comparison Image" style="max-width: 90%; height: auto; border-radius: 10px;">
+  <div style="margin-top: 35px;">
+  <div style="margin-top: 60px; width: 100%; margin: 0 auto; text-align: justify;">
+    <p style="margin-bottom: 20px;">
+      The single-point LiDAR provides only a distance value in a single direction. 
+        We utilize the square hole in the target board to extend the distance value into three points, requiring knowledge of both the grid and hole width. We can detect three points expressed in the LiDAR coordinate system for each frame.
+In the image from the camera, it perceives the square hole as a black grid due to the black wall visible through it and does not recognize it as an open hole.
+      </p>
+  </div>
+</div>
+
+<div style="margin-top: 50px; text-align: center;">
+  <div class="text-center">
+    <h2>SLIC-Calib Overview</h2>
+    <div style="width: 90%; margin: 0 auto; position: relative;">
+      <video controls loop muted autoplay style="width: 100%; border-radius: 10px;">
+        <source src="gif/framework.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div style="margin-top: 60px; width: 100%; margin: 0 auto; text-align: justify;">
+     <p style="margin-bottom: 20px;">
+      Our main idea is to establish 2D-3D correspondences between the LiDAR and camera frames by inducing rotational motion on a new calibration target board.
+      Furthermore, we refine the relative rotation between two sensors by aligning the orientation of the calibration target board with respect to the MW axes. 
+      <br>
+      (<span class="text-danger">red boxes</span>) We detect three points based on the accumulated points from single-point LiDAR by utilizing the geometric characteristics of the proposed new calibration target board. 
+      <br>
+      (<span class="text-success">green boxes</span>) We extract three parallel vertical and horizontal lines in the image and detect the MW aligned to them.
+      <br>
+      (<span class="text-primary">blue boxes</span>) Given three points, parallel lines, and the MW, we find the relative rotation and translation between two sensors by minimizing the point-to-line distances and angle differences.
+    </p>
+  </div>
+</div>
+
+
+
+  
+
+<div style="margin-top: 50px; text-align: center;">
+  <div class="text-center">
+    <h2>Result</h2>
+    <h4>We evaluate four different configurations: intra-drone (A and B) and inter-drone (C and D) cases</h4>
+    <div style="width: 80%; margin: 0 auto; position: relative;margin-bottom: 40px;">
+      <img src="gif/result.png" alt="SLIC-Calib Overview Image" style="width: 100%; border-radius: 10px;"
+    </div>
+    <div style="margin-top: 60px; width: 100%; margin: 0 auto; position: relative;">
+      <img src="gif/peeeek.gif" alt="Comparison Image" style="max-width: 100%; height: auto; border-radius: 10px;">
+    </div>
+    
+  </div>
+  <div style="margin-top: 60px; width: 100%; margin: 0 auto; text-align: justify;">
+  
+  </div>
+</div>
+
+
+
+    
+      <div>
+        <h2 class="text-center" style="margin-top: 30px;">
+          Citation
+        </h2>
+        <p>
+         
+        </p>
+  
+      </div>
+      
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
